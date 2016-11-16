@@ -1,4 +1,4 @@
-# generator-mise-en-place [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# generator-mise-en-place
 > Front end framework generator
 
 ## Installation
@@ -26,11 +26,3 @@ yo mise-en-place
 ## License
 
 Apache-2.0 © [Kind](http://www.madebykind.com)
-
-
-[npm-image]: https://badge.fury.io/js/generator-mise-en-place.svg
-[npm-url]: https://npmjs.org/package/generator-mise-en-place
-[travis-image]: https://travis-ci.org/samuelgoddard/generator-mise-en-place.svg?branch=master
-[travis-url]: https://travis-ci.org/samuelgoddard/generator-mise-en-place
-[daviddm-image]: https://david-dm.org/samuelgoddard/generator-mise-en-place.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/samuelgoddard/generator-mise-en-place

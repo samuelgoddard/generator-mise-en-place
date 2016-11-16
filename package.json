@@ -1,7 +1,16 @@
 {
   "name": "generator-mise-en-place",
-  "version": "0.2.0",
+  "version": "0.0.0",
   "description": "Yeoman generator for Mise-En-Place Template",
+  "author": {
+    "name": "Kind",
+    "email": "sam@madebykind.com",
+    "url": "www.madebykind.com"
+  },
+  "files": [
+    "app"
+  ],
+  "main": "app/index.js",
   "keywords": [
     "yeoman-generator",
     "html",
@@ -11,21 +20,11 @@
     "frontend",
     "front-end"
   ],
-  "author": {
-    "name": "Kind",
-    "email": "sam@madebykind.com",
-    "url": "www.madebykind.com"
-  },
-  "main": "app/index.js",
-  "files": [
-    "app"
-  ],
-  "repository": "bhht/generator-html-template",
   "dependencies": {
-    "yeoman-generator": "^0.18.0"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "licenses": "Apache 2.0"
+		"yeoman-generator": "~0.17.3",
+		"chalk": "~0.5.1",
+		"yosay": "^1.0.0"
+	},
+  "repository": "samuelgoddard/generator-mise-en-place",
+  "licenses": "MIT"
 }

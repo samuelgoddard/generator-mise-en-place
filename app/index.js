@@ -7,7 +7,9 @@ var yosay = require('yosay');
 var chalk = require('chalk');
 
 var miseEnPlaceGenerator = yeoman.generators.Base.extend({
-	init: function () {
+  init: function () {
+		this.pkg = require('../package.json');
+
 		this.on('end', function () {
 			if (!this.options['skip-install']) {
 				this.installDependencies();
@@ -27,7 +29,7 @@ var miseEnPlaceGenerator = yeoman.generators.Base.extend({
 		var prompts = [
 			{
 				name: 'user_name',
-				message: 'What is your name? [used for bower etc] - default (user_name)',
+				message: 'What is your name? default (user_name)',
 				default: 'user_name'
 			},
 			{
@@ -56,7 +58,7 @@ var miseEnPlaceGenerator = yeoman.generators.Base.extend({
 		}.bind(this));
 	},
 
-	app : function () {
+	app: function () {
 
 		this.mkdir(this.rootDirectory);
 		this.mkdir(this.rootDirectory + '/assets');
