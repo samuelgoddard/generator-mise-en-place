@@ -33,68 +33,59 @@ var miseEnPlaceGenerator = yeoman.generators.Base.extend({
 				default: 'user_name'
 			},
 			{
-				name: 'rootDirectory',
-				message: 'What is your project name? [used for root file structure]',
-				default: 'new-project'
+				name: 'project_name',
+				message: 'What is your project name?',
+				default: 'project-name'
 			},
 			{
 				type: 'confirm',
 				name: 'fontawesome',
 				message: 'Do you use font-awesome? default(Yes)',
 				default: 'Y/n'
-			},
-			{
-				name: 'jqueryversion',
-				message: 'jQuery version? default(latest)'
 			}
 		];
 
 		this.prompt(prompts, function (props) {
 			this.user_name = props.user_name;
-			this.rootDirectory = props.rootDirectory;
+			this.project_name = props.project_name;
 			this.fontawesome = props.fontawesome;
-			this.jqueryversion = props.jqueryversion;
 			done();
 		}.bind(this));
 	},
 
 	app: function () {
 
-		this.mkdir(this.rootDirectory);
-		this.mkdir(this.rootDirectory + '/assets');
-		this.mkdir(this.rootDirectory + '/assets/styles');
-		this.mkdir(this.rootDirectory + '/assets/js');
+		this.mkdir('assets');
+		this.mkdir('assets/styles');
+		this.mkdir('assets/js');
 
 		if(this.fontawesome){
-			this.mkdir(this.rootDirectory + '/assets/fonts');
+			this.mkdir('assets/fonts');
 		}
 
-    this.copy('_index.html', this.rootDirectory + '/index.html');
+    this.copy('_index.html', 'index.html');
 
-		this.mkdir(this.rootDirectory + '/assets/styles/atoms');
-    this.mkdir(this.rootDirectory + '/assets/styles/config');
-    this.mkdir(this.rootDirectory + '/assets/styles/forms');
-    this.mkdir(this.rootDirectory + '/assets/styles/layout');
-    this.mkdir(this.rootDirectory + '/assets/styles/lib');
-    this.mkdir(this.rootDirectory + '/assets/styles/molecules');
-    this.mkdir(this.rootDirectory + '/assets/styles/quarks');
-    this.mkdir(this.rootDirectory + '/assets/styles/state');
-    this.mkdir(this.rootDirectory + '/assets/styles/tools');
-    this.mkdir(this.rootDirectory + '/assets/styles/utilities');
-    this.mkdir(this.rootDirectory + '/assets/styles/webfonts');
-    this.copy('assets/styles/_debug.scss', this.rootDirectory + '/assets/styles/_debug.scss');
-    this.copy('assets/styles/_imports.scss', this.rootDirectory + '/assets/styles/_imports.scss');
-    this.copy('assets/styles/_normalise.scss', this.rootDirectory + '/assets/styles/_normalise.scss');
-    this.copy('assets/styles/_shame.scss', this.rootDirectory + '/assets/styles/_shame.scss');
-    this.copy('assets/styles/ie8.scss', this.rootDirectory + '/assets/styles/ie8.scss');
-    this.copy('assets/styles/main.scss', this.rootDirectory + '/assets/styles/main.scss');
+		this.mkdir('assets/styles/atoms');
+    this.mkdir('assets/styles/config');
+    this.mkdir('assets/styles/forms');
+    this.mkdir('assets/styles/layout');
+    this.mkdir('assets/styles/lib');
+    this.mkdir('assets/styles/molecules');
+    this.mkdir('assets/styles/quarks');
+    this.mkdir('assets/styles/state');
+    this.mkdir('assets/styles/tools');
+    this.mkdir('assets/styles/utilities');
+    this.mkdir('assets/styles/webfonts');
+    this.template('assets/styles/_debug.scss','assets/styles/_debug.scss');
+    this.template('assets/styles/_imports.scss','assets/styles/_imports.scss');
+    this.template('assets/styles/_normalise.scss','assets/styles/_normalise.scss');
+    this.template('assets/styles/_shame.scss','assets/styles/_shame.scss');
+    this.template('assets/styles/ie8.scss','assets/styles/ie8.scss');
+    this.template('assets/styles/main.scss','assets/styles/main.scss');
 
-		this.template('_Gruntfile.js', this.rootDirectory + '/Gruntfile.js');
-		this.template('_package.json', this.rootDirectory + '/package.json');
-		this.template('_bower.json', this.rootDirectory + '/bower.json');
-		this.template('bowerrc', this.rootDirectory + '/.bowerrc');
+		this.template('_Gruntfile.js', 'Gruntfile.js');
+		this.template('_package.json', 'package.json');
 	},
-
 });
 
 module.exports = miseEnPlaceGenerator;

@@ -1,3 +1,3 @@
-# HTML Template (Plain)
+# Mise En Place (Plain)
 
-An untouched version of HTML Template.
+An untouched version of our Front End Framework.
